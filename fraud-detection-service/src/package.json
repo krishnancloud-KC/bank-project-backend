@@ -1,0 +1,27 @@
+{
+  "name": "fraud-detection-service",
+  "version": "1.0.0",
+  "description": "Fraud Detection Service with BigQuery for Bank Project",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js"
+  },
+  "dependencies": {
+    "@google-cloud/bigquery": "^7.3.0",
+    "@google-cloud/pubsub": "^4.3.3",
+    "@google-cloud/firestore": "^7.3.0",
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "helmet": "^7.1.0",
+    "morgan": "^1.10.0",
+    "dotenv": "^16.3.1",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

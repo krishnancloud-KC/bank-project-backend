@@ -1,0 +1,25 @@
+﻿# Node
+node_modules/
+build/
+dist/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.backup
+**/*.exe
+
+# Secrets
+.env
+gcp-keys/
+*credentials*.json
+*service-account*.json
+
+# OS
+.DS_Store
+Thumbs.db

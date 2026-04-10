@@ -6,6 +6,16 @@ const jwt = require('jsonwebtoken');
 
 const app = express();
 app.use(express.json());
+const cors = require('cors');
+app.use(cors({
+  origin: [
+    'https://banking-frontend-340118508666.asia-south1.run.app',
+    'http://localhost:3000'
+  ],
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
 
 const firestore = new Firestore({ projectId: process.env.PROJECT_ID });
 const JWT_SECRET = process.env.JWT_SECRET || 'bank-project-secret-key-2024';

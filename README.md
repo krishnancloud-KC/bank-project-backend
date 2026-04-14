@@ -10,6 +10,7 @@
 | fraud-detection-service | Real-time fraud detection via Pub/Sub |
 | chatbot-service | AI-powered banking assistant (Vertex AI) |
 
+
 ## Tech Stack
 `GCP Cloud Run` `Firestore` `Pub/Sub` `Vertex AI` `Terraform` `Node.js` `Python` `Docker`
 

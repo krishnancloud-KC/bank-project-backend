@@ -19,6 +19,7 @@
 | Chatbot Service | https://chatbot-service-25xh6d64va-el.a.run.app |
 
 ## 🏗 Architecture
+![Architecture Diagram](bank-architecture.drawio.png)
 React Frontend
 │
 ▼

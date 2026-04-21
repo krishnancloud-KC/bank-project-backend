@@ -1,25 +1,83 @@
-# 🏦 GCP Bank Project — Backend
+# 🏦 GCP Bank Project — Banking Microservices Platform
 
-> Cloud-native Banking Microservices on Google Cloud Platform
+![GCP](https://img.shields.io/badge/GCP-Cloud%20Run-4285F4?logo=googlecloud&logoColor=white)
+![Terraform](https://img.shields.io/badge/Terraform-IaC-7B42BC?logo=terraform&logoColor=white)
+![Vertex AI](https://img.shields.io/badge/Vertex%20AI-Gemini-FF6F00?logo=google&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-Backend-339933?logo=nodedotjs&logoColor=white)
+![Cost](https://img.shields.io/badge/Cost-FREE%20₹0-brightgreen)
 
-## Services
-| Service | Description |
-|---------|-------------|
-| auth-service | User registration, login & JWT authentication |
-| transaction-service | Deposit, withdraw & transaction history |
-| fraud-detection-service | Real-time fraud detection via Pub/Sub |
-| chatbot-service | AI-powered banking assistant (Vertex AI) |
+> Cloud-native Banking Microservices on Google Cloud Platform — Auth, Transactions, Fraud Detection & AI Chatbot
 
+## 🚀 Live Demo
 
-## Tech Stack
-`GCP Cloud Run` `Firestore` `Pub/Sub` `Vertex AI` `Terraform` `Node.js` `Python` `Docker`
+| Service | URL |
+|---------|-----|
+| Banking App | https://bank-frontend-340118508666.asia-south1.run.app |
+| Auth Service | https://auth-service-25xh6d64va-el.a.run.app |
+| Transaction Service | https://transaction-service-25xh6d64va-el.a.run.app |
+| Fraud Detection | https://fraud-detection-service-25xh6d64va-el.a.run.app |
+| Chatbot Service | https://chatbot-service-25xh6d64va-el.a.run.app |
 
-## Infrastructure
-- Terraform IaC — automated GCP provisioning
-- GitHub Actions — CI/CD pipeline
-- Cloud Run — serverless, auto-scaling
+## 🏗 Architecture
+React Frontend
+│
+▼
+┌─────────────────────────────────────┐
+│         GCP Cloud Run               │
+│  ┌──────────┐  ┌─────────────────┐  │
+│  │auth-svc  │  │transaction-svc  │  │
+│  │JWT+Fire  │  │BigQuery+Pub/Sub │  │
+│  └──────────┘  └─────────────────┘  │
+│  ┌──────────┐  ┌─────────────────┐  │
+│  │fraud-svc │  │chatbot-svc      │  │
+│  │Pub/Sub   │  │Vertex AI Gemini │  │
+│  └──────────┘  └─────────────────┘  │
+└─────────────────────────────────────┘
 
-## Author
-**Krishnan C** — Senior Cloud & Data Engineer | 7+ Years 
+## 🔧 Services
 
+| Service | Tech | Description |
+|---------|------|-------------|
+| auth-service | Node.js + Firestore + JWT | User registration, login & token validation |
+| transaction-service | Node.js + BigQuery + Pub/Sub | Deposit, withdraw & transaction history |
+| fraud-detection-service | Node.js + Pub/Sub + BigQuery | Real-time fraud detection via event streaming |
+| chatbot-service | Node.js + Vertex AI Gemini | Telugu & English AI banking assistant |
 
+## 💻 Tech Stack
+
+| Layer | Technology |
+|-------|-----------|
+| Cloud Runtime | GCP Cloud Run |
+| AI | Vertex AI (Gemini Flash) |
+| Messaging | Cloud Pub/Sub |
+| Database | BigQuery + Firestore |
+| IaC | Terraform |
+| Frontend | React + JWT Auth |
+| Backend | Node.js + Express |
+| Container | Docker |
+
+## 📁 Project Structure
+bank-project-backend/
+├── auth-service/          # JWT Authentication
+├── transaction-service/   # Deposits & Withdrawals
+├── fraud-detection-service/ # Pub/Sub Fraud Engine
+├── chatbot-service/       # Vertex AI Chatbot
+└── main.tf               # Terraform IaC
+## 🚀 Setup & Deploy
+
+```bash
+# Clone
+git clone https://github.com/krishnancloud-KC/bank-project-backend.git
+
+# Deploy to GCP Cloud Run
+gcloud run deploy auth-service --source ./auth-service --region asia-south1
+gcloud run deploy transaction-service --source ./transaction-service --region asia-south1
+gcloud run deploy fraud-detection-service --source ./fraud-detection-service --region asia-south1
+gcloud run deploy chatbot-service --source ./chatbot-service --region asia-south1
+```
+
+## 🔐 Test Credentials
+Email: test@bank.com
+Password: Test@123
+---
+*GCP Bank Project | krishnancloud-KC | April 2026 | Cost: FREE ₹0*
